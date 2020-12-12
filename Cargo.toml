@@ -3,6 +3,7 @@ name = "rust-sample-cli"
 version = "0.1.0"
 authors = ["UMASHIBA <umashiba1@gmail.com>"]
 edition = "2018"
+default-run = "rust-sample-cli"
 
 [dependencies]
 anyhow = "1.0.35"
