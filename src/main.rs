@@ -51,6 +51,7 @@ impl RpnCalculator {
                     "*" => x * y,
                     "/" => x / y,
                     "%" => x % y,
+                    "**" => x.pow(y as u32),
                     _ => bail!("invalid token at {}", pos),
                 };
                 stack.push(res);
@@ -113,6 +114,7 @@ mod tests {
         assert_eq!(calc.eval("2 3 -").unwrap(), -1);
         assert_eq!(calc.eval("2 3 /").unwrap(), 0);
         assert_eq!(calc.eval("2 3 %").unwrap(), 2);
+        assert_eq!(calc.eval("3 3 **").unwrap(), 27);
     }
 
     #[test]
